@@ -20,9 +20,16 @@ const setHourlyEvent = () => {
       //get data-time value from row
       const textArea = $(this).find("textarea");
       const blockTime = parseInt($(this).data("time"), 10);
+
+      //if/else statement to set the row color based on current time
+      if (blockTime === currentHour) {
+        textArea.removeClass("past").addClass("present");
+      } else if (blockTime > currentHour) {
+        textArea.removeClass("past").addClass("future");
+      }
     };
 
-    timeBlockArray.each();
+    timeBlockArray.each(iterateThroughArray);
   } else {
     console.log("exists");
   }
