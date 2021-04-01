@@ -15,6 +15,13 @@ const setHourlyEvent = () => {
 
     //variable to store block elemnts array
     const timeBlockArray = $(".container .row");
+
+    const iterateThroughArray = function () {
+      //get data-time value from row
+      const textArea = $(this).find("textarea");
+      const blockTime = parseInt($(this).data("time"), 10);
+    };
+
     timeBlockArray.each();
   } else {
     console.log("exists");
