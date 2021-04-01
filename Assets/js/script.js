@@ -37,11 +37,21 @@ const setHourlyEvent = () => {
   }
 };
 
+const onClick = (event) => {
+  const target = $(event.target);
+  const currentTarget = $(event.currentTarget);
+  console.log("event");
+};
+
 const runOnReady = () => {
   //displays current date
   currentDate();
 
+  //sets row color and populates textarea with whatever is saved in local storage
   setHourlyEvent();
+
+  //runs function on click
+  $(".container").click(onClick);
 };
 
 //runs the code on ready
