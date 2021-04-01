@@ -4,12 +4,18 @@ const currentDate = () => {
 };
 
 const setHourlyEvent = () => {
+  //fetches data from local storage
   const emptyScheduleObject = JSON.parse(
     localStorage.getItem("emptyScheduleObject")
   );
-
+  //checks if data is null or not.
   if (emptyScheduleObject !== null) {
-    console.log("null");
+    //checks current hour value
+    const currentHour = moment().hour();
+
+    //variable to store block elemnts array
+    const timeBlockArray = $(".container .row");
+    timeBlockArray.each();
   } else {
     console.log("exists");
   }
