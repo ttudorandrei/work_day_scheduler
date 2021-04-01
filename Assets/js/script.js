@@ -38,6 +38,9 @@ const setHourlyEvent = () => {
 };
 
 const onClick = (event) => {
+  const emptyScheduleObject = JSON.parse(
+    localStorage.getItem("emptyScheduleObject")
+  );
   const target = $(event.target);
   const currentTarget = $(event.currentTarget);
   //this stops event bubbling
@@ -45,7 +48,15 @@ const onClick = (event) => {
     const key = target.attr("id");
     const value = target.parent().find("textarea").val();
 
-    console.log(key, value);
+    const filledScheduleObject = {
+      ...emptyScheduleObject,
+      [key]: value,
+    };
+
+    localStorage.setItem(
+      "emptyScheduleObject",
+      JSON.stringify(filledScheduleObject)
+    );
   }
 };
 
