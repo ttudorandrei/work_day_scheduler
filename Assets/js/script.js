@@ -31,14 +31,12 @@ const setHourlyEvent = () => {
       //if user input exists, it is pushed in its respective textarea
       const plannedEvent = emptyScheduleObject[blockTime];
       $(this).find("textarea").text(plannedEvent);
-      console.log(plannedEvent);
     };
 
     timeBlockArray.each(iterateThroughArray);
   } else {
     //add empty array in local storage
     localStorage.setItem("emptyScheduleObject", JSON.stringify({}));
-    console.log("null");
   }
 };
 
