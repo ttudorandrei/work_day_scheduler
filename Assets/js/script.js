@@ -40,7 +40,13 @@ const setHourlyEvent = () => {
 const onClick = (event) => {
   const target = $(event.target);
   const currentTarget = $(event.currentTarget);
-  console.log("event");
+  //this stops event bubbling
+  if (target.is("button")) {
+    const key = target.attr("id");
+    const value = target.parent().find("textarea").val();
+
+    console.log(key, value);
+  }
 };
 
 const runOnReady = () => {
