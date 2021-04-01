@@ -27,6 +27,11 @@ const setHourlyEvent = () => {
       } else if (blockTime > currentHour) {
         textArea.removeClass("past").addClass("future");
       }
+
+      //if user input exists, it is pushed in its respective textarea
+      const plannedEvent = emptyScheduleObject[blockTime];
+      $(this).find("textarea").text(plannedEvent);
+      console.log(plannedEvent);
     };
 
     timeBlockArray.each(iterateThroughArray);
@@ -37,22 +42,23 @@ const setHourlyEvent = () => {
   }
 };
 
-const onClick = (event) => {
+const onClick = function (event) {
   const emptyScheduleObject = JSON.parse(
     localStorage.getItem("emptyScheduleObject")
   );
   const target = $(event.target);
-  const currentTarget = $(event.currentTarget);
   //this stops event bubbling
   if (target.is("button")) {
     const key = target.attr("id");
     const value = target.parent().find("textarea").val();
 
+    //new object that stores user text
     const filledScheduleObject = {
       ...emptyScheduleObject,
       [key]: value,
     };
 
+    //this pushes the user text in local storage
     localStorage.setItem(
       "emptyScheduleObject",
       JSON.stringify(filledScheduleObject)
