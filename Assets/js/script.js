@@ -13,7 +13,7 @@ const setHourlyEvent = () => {
     //checks current hour value
     const currentHour = moment().hour();
 
-    //variable to store block elemnts array
+    //variable to store block elements array
     const timeBlockArray = $(".container .row");
 
     const iterateThroughArray = function () {
@@ -31,7 +31,9 @@ const setHourlyEvent = () => {
 
     timeBlockArray.each(iterateThroughArray);
   } else {
-    console.log("exists");
+    //add empty array in local storage
+    localStorage.setItem("emptyScheduleObject", JSON.stringify({}));
+    console.log("null");
   }
 };
 
