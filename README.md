@@ -4,7 +4,7 @@
 
 As a developer, I was tasked with building a Work Day Scheduler to store and display important messages.
 
-When the planner is opened, the current day is displayed at the top of the page;
+When the planner is opened, the current date is displayed at the top of the page;
 
 There is a timeblock for each working hour (9-17);
 
