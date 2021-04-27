@@ -20,6 +20,10 @@ After saving, events persist. You can close the app and open it anytime to see e
 
 ![Screenshot of working application](Assets/Images/work-day-scheduler.png)
 
+## Technologies Used
+
+This app was built using HTMl, CSS, Bootstrap, JavaScript, jQuery and MomentJS
+
 ## Link to deployed application
 
 You can access the deployed application [here](https://ttudorandrei.github.io/work_day_scheduler/)
